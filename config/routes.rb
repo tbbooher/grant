@@ -1,4 +1,11 @@
 Grant::Application.routes.draw do
+  get "home/about"
+
+  get "home/index"
+
+  resources :comments
+
+
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   match '/auth/:provider/callback' => 'sessions#create'
