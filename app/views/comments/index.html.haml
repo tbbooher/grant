@@ -1,8 +1,8 @@
 - model_class = Comment
 .page-header
-  %h1 Messages to the Family
+  %h1 Condolences
 
-%p These messages will be visible to all. Please share your memories of Grant or share a message of support for the family.
+%p These condolences will be visible to all. Please share your memories of Grant or share a message of support for the family.
 
 - @comments.each do |comment|
   %h4 By #{comment.name} on #{comment.created_at.strftime("%B %d, %Y")}
@@ -11,4 +11,4 @@
 -#= link_to t('.edit', :default => t("helpers.links.edit")), edit_comment_path(comment), :class => 'btn btn-mini'
 -#= link_to t('.destroy', :default => t("helpers.links.destroy")), comment_path(comment), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-= link_to "Add Comment", new_comment_path, :class => 'btn btn-primary'
+= link_to "Add Your Condolence", new_comment_path, :class => 'btn btn-primary'
