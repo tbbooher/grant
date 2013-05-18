@@ -11,6 +11,7 @@ Grant::Application.routes.draw do
   get "home/about"
   get "home/services"
   get "home/meals"
+  get "home/questions"
 
   match '/auth/:provider/callback' => 'sessions#create'
   match '/signin' => 'sessions#new', :as => :signin

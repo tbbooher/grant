@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def about
 
   end
+
+  def questions
+
+  end
 end
