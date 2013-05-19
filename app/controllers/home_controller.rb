@@ -8,10 +8,12 @@ class HomeController < ApplicationController
   end
 
   def about
-
+    @grant_story = GrantStory.new
+    @stories = GrantStory.all
   end
 
   def questions
 
   end
+
 end

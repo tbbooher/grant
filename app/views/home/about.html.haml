@@ -1,8 +1,12 @@
 %h1 About Grant
 
-%p message from the family here?
+- @stories.each do |story|
+  .well
+    = story.story
 
--# %p Grant was taken to be with the Lord after a tragic accident last Thursday morning. He
+.well
+  %p Share a story about how Grant touched your life. It will be posted here for all to know the blessing he provided us.
+  = render partial: "grant_stories/form"
 
 %h3 Media
 %ul

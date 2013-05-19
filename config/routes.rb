@@ -1,4 +1,10 @@
 Grant::Application.routes.draw do
+  resources :grant_stories
+
+
+  resources :registrations
+
+
   get "home/about"
 
   get "home/index"
