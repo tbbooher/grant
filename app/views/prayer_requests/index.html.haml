@@ -2,25 +2,15 @@
   %h1 Prayer Requests
 
 %p
-  Many of us have told the family that we are praying for them. This page is an attempt post the requests the
-  Spirit puts on our heart.
-%table.table.table-striped
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:_id)
-      %th= model_class.human_attribute_name(:request)
-      %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', :default => t("helpers.actions")
-  %tbody
-    - @prayer_requests.each do |prayer_request|
-      %tr
-        %td= link_to prayer_request.id, prayer_request_path(prayer_request)
-        %td= prayer_request._id
-        %td= prayer_request.request
-        %td=l prayer_request.created_at
-        %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_prayer_request_path(prayer_request), :class => 'btn btn-mini'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), prayer_request_path(prayer_request), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+  Many of us have told the family that we are praying for them. This page is an attempt collect the requests the
+  Spirit puts on our heart or that a family member requests. In so doing, we are able to more efficiently pray and
+  bless both them and each other. While all these requests are anonymous, it would be a blessing to some of us to
+  know you are praying with us. If you feel led, please contact tim@theboohers.org to share you are praying.
 
-= link_to t('.new', :default => t("helpers.links.new")), new_prayer_request_path, :class => 'btn btn-primary'
+- @prayer_requests.each do |prayer_request|
+  .well
+    = Sanitize.clean(prayer_request.request)
+
+%h2 Add your request
+
+= render :partial => "form"

@@ -68,7 +68,7 @@
 
 - @stories.each do |story|
   .well
-    = story.story
+    = Sanitize.clean(story.story)
 
 .well
   %p Share a story about how Grant touched your life. It will be posted here for all to know the blessing he provided us.

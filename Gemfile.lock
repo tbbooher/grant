@@ -198,9 +198,6 @@ GEM
     sanitize (2.0.3)
       nokogiri (>= 1.4.4, < 1.6)
       nokogiri (>= 1.4.4, < 1.6)
-    sanitize-rails (0.6.2)
-      rails (~> 3.0)
-      sanitize
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -264,7 +261,7 @@ DEPENDENCIES
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)
   rspec-rails (>= 2.12.2)
-  sanitize-rails
+  sanitize
   sass-rails (~> 3.2.3)
   simple_form
   therubyracer

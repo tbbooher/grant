@@ -14,7 +14,7 @@
       %tr
         %td= link_to grant_story.id, grant_story_path(grant_story)
         %td= grant_story._id
-        %td= grant_story.story
+        %td= Sanitize.clean(grant_story.story)
         %td=l grant_story.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_grant_story_path(grant_story), :class => 'btn btn-mini'

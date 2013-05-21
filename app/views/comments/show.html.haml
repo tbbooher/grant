@@ -9,11 +9,11 @@
 %p
   %strong= model_class.human_attribute_name(:text) + ':'
   %br
-  = @comment.text
+  = Sanitize.clean(@comment.text)
 %p
   %strong= model_class.human_attribute_name(:name) + ':'
   %br
-  = @comment.name
+  = Sanitize.clean(@comment.name)
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), comments_path, :class => 'btn'
