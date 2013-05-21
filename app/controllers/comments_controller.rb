@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
+
+  before_filter :authenticate_user!, except: [:index, :create, :show, :new]
+
   def index
     @comments = Comment.desc(:created_at)
 

@@ -1,8 +1,12 @@
 class PrayerRequestsController < ApplicationController
   # GET /prayer_requests
   # GET /prayer_requests.json
+
+  before_filter :authenticate_user!, except: [:index, :create, :show, :new]
+
   def index
     @prayer_requests = PrayerRequest.all
+    @prayer_request = PrayerRequest.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +48,7 @@ class PrayerRequestsController < ApplicationController
 
     respond_to do |format|
       if @prayer_request.save
-        format.html { redirect_to @prayer_request, notice: 'Prayer request was successfully created.' }
+        format.html { redirect_to prayer_requests_path, notice: 'Prayer request was successfully created.' }
         format.json { render json: @prayer_request, status: :created, location: @prayer_request }
       else
         format.html { render action: "new" }

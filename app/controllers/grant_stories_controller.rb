@@ -1,6 +1,9 @@
 class GrantStoriesController < ApplicationController
   # GET /grant_stories
   # GET /grant_stories.json
+
+  before_filter :authenticate_user!, except: [:index, :create, :show, :new]
+
   def index
     @grant_stories = GrantStory.all
 
