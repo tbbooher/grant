@@ -1,4 +1,7 @@
 Grant::Application.routes.draw do
+  resources :prayer_requests
+
+
   resources :grant_stories
 
 
