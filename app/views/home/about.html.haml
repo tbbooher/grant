@@ -64,13 +64,13 @@
     %b
       Abraham Lincoln
 
-%h3 Your place to share stories
+-#%h3 Your place to share stories
 
-- @stories.each do |story|
-  .well
-    = Sanitize.clean(story.story)
+-#- @stories.each do |story|
+-#  .well
+-#    = Sanitize.clean(story.story)
 
-.well
-  %p Share a story about how Grant touched your life. It will be posted here for all to know the blessing he provided us.
-  = render partial: "grant_stories/form"
+-#.well
+-#  %p Share a story about how Grant touched your life. It will be posted here for all to know the blessing he provided us.
+  -#= render partial: "grant_stories/form"
 
